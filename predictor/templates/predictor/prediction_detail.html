@@ -1,0 +1,33 @@
+{% extends 'predictor/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Prediction Details</h2>
+    <div class="card shadow p-4">
+        <p><strong>Date:</strong> {{ prediction.timestamp }}</p>
+        <p><strong>Predicted Price Range:</strong> ${{ prediction.predicted_price_min }} - ${{ prediction.predicted_price_max }}</p>
+        
+        <hr>
+        <h4 class="mt-4">Input Features</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Square Footage:</strong> {{ prediction.sqft_living }}</li>
+            <li class="list-group-item"><strong>Bedrooms:</strong> {{ prediction.bedrooms }}</li>
+            <li class="list-group-item"><strong>Bathrooms:</strong> {{ prediction.bathrooms }}</li>
+            <li class="list-group-item"><strong>Lot Size (sqft):</strong> {{ prediction.sqft_lot }}</li>
+            <li class="list-group-item"><strong>Grade:</strong> {{ prediction.grade }}</li>
+            <li class="list-group-item"><strong>Floors:</strong> {{ prediction.floors }}</li>
+            <li class="list-group-item"><strong>House Age (Years):</strong> {{ prediction.house_age }}</li>
+            <li class="list-group-item"><strong>Living Area (15yr):</strong> {{ prediction.sqft_living15 }}</li>
+            <li class="list-group-item"><strong>Latitude:</strong> {{ prediction.lat }}</li>
+            <li class="list-group-item"><strong>Longitude:</strong> {{ prediction.long }}</li>
+        </ul>
+    </div>
+    <!-- On prediction_detail.html -->
+<div class="text-center mt-4">
+    <a href="{% url 'my_predictions' %}" class="btn btn-secondary btn-lg">
+         Back to My Predictions
+    </a>
+</div>
+
+</div>
+{% endblock %}

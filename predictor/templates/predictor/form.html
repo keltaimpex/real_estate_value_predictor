@@ -1,0 +1,69 @@
+{% extends 'predictor/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center mb-4">
+    
+        <h2 class="fw-bold mt-2">Please fill the details below</h2>
+    </div>
+
+    {% if error %}
+        <div class="alert alert-danger shadow-sm">{{ error }}</div>
+    {% endif %}
+
+    <div class="mx-auto p-4 shadow rounded-4" style="max-width: 600px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.3);">
+        <form method="POST">
+    
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Square Footage</label>
+            <input type="number" step="any" name="sqft_living" class="form-control" placeholder="Enter square footage" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Bedrooms</label>
+            <input type="number" name="bedrooms" class="form-control" placeholder="Enter number of bedrooms" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Bathrooms</label>
+            <input type="number" step="0.5" name="bathrooms" class="form-control" placeholder="Enter number of bathrooms" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Lot Size (sqft)</label>
+            <input type="number" step="any" name="sqft_lot" class="form-control" placeholder="Enter lot size" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Grade</label>
+            <input type="number" name="grade" class="form-control" placeholder="Enter grade" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Floors</label>
+            <input type="number" name="floors" class="form-control" placeholder="Enter number of floors" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">House Age (Years)</label>
+            <input type="number" name="house_age" class="form-control" placeholder="Enter house age" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Living Area (sqft) - neighbouring houses</label>
+            <input type="number" step="any" name="sqft_living15" class="form-control" placeholder="Enter living area 15 years ago" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Latitude</label>
+            <input type="number" step="any" name="lat" class="form-control" placeholder="Enter latitude" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Longitude</label>
+            <input type="number" step="any" name="long" class="form-control" placeholder="Enter longitude" required>
+        </div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary btn-lg px-4 shadow-sm">
+                 Predict Price 📈
+            </button>
+        </div>
+    </form>
+    <div class="mt-4 text-center text-muted">
+        <p><small>Want to store your predictions? <a href="{% url 'register' %}">Create an account</a> or <a href="{% url 'login' %}">Log in</a>.</small></p>
+    </div>
+</div>
+{% endblock %}

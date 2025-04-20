@@ -1,0 +1,22 @@
+<!-- interpret_predictions.html -->
+{% extends 'predictor/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Tips for Interpreting Predictions</h2>
+    <p>Understanding your house price prediction is crucial. Here are some tips to help you interpret the results:</p>
+
+    <ul>
+        <li>The predicted price is an estimate based on the input features (e.g., size, location).</li>
+        <li>Higher-grade houses and larger houses generally have higher prices.</li>
+        <li>Location (latitude and longitude) also plays a significant role in determining house prices.</li>
+        <li>If your prediction seems higher or lower than expected, consider adjusting the input features and trying again.</li>
+    </ul>
+</div>
+
+
+<div class="text-center mt-4">
+    <a href="{% url 'predict_price' %}" class="btn btn-outline-primary">← Back to Home</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- how_the_model_works.html -->
+{% extends 'predictor/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">How the Model Works</h2>
+    <p>This section explains the inner workings of my house price prediction model.</p>
+    <p>The model is based on a machine learning algorithm called Random Forest. It uses various features like square footage, number of bedrooms, bathrooms, and more to predict the price of a house. Here's how it works:</p>
+    
+    <ul>
+        <li>The model takes input data (e.g., house features like size, location) and processes it through multiple decision trees.</li>
+        <li>Each tree makes a prediction based on different features, and the final output is an average of all the trees' predictions.</li>
+        <li>This approach helps ensure accurate predictions by combining multiple perspectives from the data.</li>
+    </ul>
+</div>
+
+
+<div class="text-center mt-4">
+    <a href="{% url 'predict_price' %}" class="btn btn-outline-primary">← Back to Home</a>
+</div>
+
+{% endblock %}

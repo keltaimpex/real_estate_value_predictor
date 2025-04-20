@@ -1,0 +1,25 @@
+<!-- faqs.html -->
+{% extends 'predictor/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Frequently Asked Questions (FAQs)</h2>
+
+    <h4>1. How accurate is the prediction?</h4>
+    <p>The accuracy depends on the quality and relevance of the input data. While this model is designed to provide a reliable estimate, I recommend cross-referencing with market trends and expert opinions.</p>
+
+    <h4>2. Can I trust the model for all house types?</h4>
+    <p>The model works best with standard residential properties. Unique properties (e.g., very large estates, highly customized homes) might not be as accurately predicted.</p>
+
+    <h4>3. Why does the model need information about the neighborhood?</h4>
+    <p>Neighborhood factors (like location, proximity to amenities, etc.) heavily influence house prices. My model uses these to ensure accurate predictions.</p>
+
+    <h4>4. How can I improve the accuracy of my prediction?</h4>
+    <p>Try to provide accurate and detailed information about the house's features, including square footage, number of rooms, and age of the property.</p>
+</div>
+
+<div class="text-center mt-4">
+    <a href="{% url 'predict_price' %}" class="btn btn-outline-primary">← Back to Home</a>
+</div>
+
+{% endblock %}
