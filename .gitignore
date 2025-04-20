@@ -1,0 +1,24 @@
+# Python cache
+*.pyc
+__pycache__/
+
+# Django database
+db.sqlite3
+
+# Environment variables
+.env
+
+# Media and static files (optional depending on use)
+media/
+staticfiles/
+
+# VS Code settings (optional)
+.vscode/
+
+# Model file(s) – Exclude large ones
+*.pkl
+rf_model.pkl
+
+# OS-specific
+.DS_Store
+Thumbs.db
